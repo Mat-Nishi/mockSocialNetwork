@@ -1,0 +1,105 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+.footer{
+    background-color: rgb(0,98,209);
+    padding: 10px;
+    width: 100%;
+}
+#copy{
+    font-size: small;
+}
+.navbar-bsdw{
+    box-shadow: 2px 2px 2px 1px lightgray;
+}
+
+.top-nav{
+    position: fixed;
+    width: 100%;
+}
+
+.profile-box{
+    position: absolute;
+    margin-left: 15%;
+    padding-top:20px;
+}
+
+.edit-box{
+    position: absolute;
+    margin-left: 15%;
+    padding-top:20px;
+    top: 80px;
+}
+
+.search-box{
+    top:80px;
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 15%;
+    padding-top:20px;
+    width: 500px;
+}
+
+.search-item{
+    padding: 10px 50px;
+}
+
+.card-search-container{
+    position: absolute;
+    top:80px;
+    width: 300px;
+    z-index: -1000;
+}
+
+.card-search{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 150px;
+    width: 450px;
+    margin-left: 200px;
+    margin-top: 10px;
+    border: 2px solid #88b2ff;
+    border-radius: 25px;
+}
+
+.card{
+    top:80px;
+}
+
+.search-result-name{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 180px;
+    margin-left: 10px;
+}
+
+.search-result-img{
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-top: auto;
+}
+
+.search-result-btn{
+    height: 50%px;
+    width: 80px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.home-plot{
+    position: absolute;
+    margin: 100px 180px;
+}

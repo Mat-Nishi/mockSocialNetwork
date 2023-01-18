@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}
+
+{% block content %} 
+<form method="POST">
+    
+    <div class="search-box">
+    <h3 align="center">Search</h3>
+    
+    <div class="input-group search-item">
+        <label for="searchTerm"></label>
+        <input type="search" name="searchTerm" id="searchTerm" class="form-control rounded" placeholder="What are you looking for?" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" class="btn btn-outline-primary">search</button>
+      </div>
+
+      <div class="form-group search-item">
+        <label for="searchType">Search by:</label>
+        <select class="form-control" name="searchType" id="searchType">
+          <option value="none">-</option>
+          <option value="firstName">First Name</option>
+          <option value="lastName">Last Name</option>
+          <option value="city">City</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+    </div>
+
+</form>
+{% endblock %}

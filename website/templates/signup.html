@@ -12,25 +12,48 @@
         <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
           <form method="POST">
             <!-- Name input -->
-            <div class="form-outline mb-4">
-                <input type="text" name ="name" id="name" class="form-control form-control-lg" placeholder="Insert your name"/>
-                <label class="form-label" for="name">Name</label>
+            <div class="row">
+              <div class="col-md-6 mb-2">
+                <div class="form-outline">
+                  <input style=height:50px type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name"/>
+                  <label class="form-label" for="firstName">First Name</label>
+                </div>
               </div>
+              <div class="col-md-6 mb-2">
+                <div class="form-outline">
+                  <input style=height:50px type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name"/>
+                  <label class="form-label" for="lastName">Last Name</label>
+                </div>
+              </div>
+            </div>
 
             <!-- Email input -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-2">
               <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Insert your email"/>
               <label class="form-label" for="email">Email address</label>
             </div>
-  
+
+            <!-- Phone input -->
+            <div class="form-outline mb-2">
+              <input type="text" name="phone" id="phone" class="form-control form-control-lg" placeholder="Insert your phone number"/>
+              <label class="form-label" for="phone">Phone number</label>
+            </div>
+
+            <!-- Address input -->
+            <div class="form-outline mb-2">
+              <input type="text" name="city" id="city" class="form-control form-control-lg" placeholder="Insert your city"/>
+              <label class="form-label" for="city">City</label>
+            </div>
+
+            <!--Password-->
             <div class="row">
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-2">
                   <div class="form-outline">
                     <input type="password" name="password" id="password" class="form-control" placeholder="Insert your password"/>
                     <label class="form-label" for="password">Password</label>
                   </div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-2">
                   <div class="form-outline">
                     <input type="password" name="confirmPass" id="confirmPass" class="form-control" placeholder="Confirm password"/>
                     <label class="form-label" for="confirmPass">Confirm Password</label>
