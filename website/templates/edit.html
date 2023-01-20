@@ -1,0 +1,67 @@
+{% extends "base.html" %}{% block title %}Profile{% endblock %}
+
+{% block content %} 
+
+<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 edit-box">
+    <form method="POST">
+      <!-- Name input -->
+      <div class="row">
+        <div class="col-md-6 mb-1">
+          <div class="form-outline">
+            <input style=height:50px type="text" name="firstName" id="firstName" class="form-control" placeholder="First name"/>
+            <label class="form-label" for="firstName">First Name</label>
+          </div>
+        </div>
+        <div class="col-md-6 mb-1">
+          <div class="form-outline">
+            <input style=height:50px type="text" name="lastName" id="lastName" class="form-control" placeholder="Last name"/>
+            <label class="form-label" for="lastName">Last Name</label>
+            <input style="margin-left: 20px;" class="form-check-input" type="checkbox" value="" id="lastNamePrivate" name="lastNamePrivate"/>
+            <label style="margin-left: 40px;" class="form-check-label" for="lastNamePrivate"> Make info private </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email input -->
+      <div class="form-outline mb-1">
+        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="example@example.com"/>
+        <label class="form-label" for="email">Change email address</label>
+        <input style="margin-left: 215px;" class="form-check-input" type="checkbox" value="" id="emailPrivate" name="emailPrivate"/>
+        <label style="margin-left: 235px;" class="form-check-label" for="emailPrivate"> Make info private </label>
+      </div>
+
+      <!-- Phone input -->
+      <div class="form-outline mb-1">
+        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="(123)1234-5678"/>
+        <label class="form-label" for="email">Change phone number</label>
+        <input style="margin-left: 207px;" class="form-check-input" type="checkbox" value="" id="company" name="company"/>
+        <label style="margin-left: 227px;" class="form-check-label" for="company"> Make info private </label>
+      </div>
+
+      <!-- Address input -->
+      <div class="form-outline mb-1">
+        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="New address"/>
+        <label class="form-label" for="email">Change address</label>
+        <input style="margin-left: 257px;" class="form-check-input" type="checkbox" value="" id="company" name="company"/>
+        <label style="margin-left: 277px;" class="form-check-label" for="company"> Make info private </label>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <input type="password" name="password" id="password" class="form-control" placeholder="Insert your password"/>
+              <label class="form-label" for="password">Current Password</label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="New password"/>
+              <label class="form-label" for="newPassword">New Password</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm changes</button>  
+
+{% endblock %}

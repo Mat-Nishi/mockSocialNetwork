@@ -1,14 +1,16 @@
-{% extends "base.html" %}{% block title %}Home{% endblock %}
+{% extends "base.html" %}{% block title %}Results{% endblock %}
 
 {% block content %}
 
-<div class="home-container">
+<div class="card-search-container">
 {% for id, name, aux in ids %} 
     <div class="card-search">
         <img style=padding-bottom:20px src="static/abstract-user-flat-4.svg"
                 class="search-result-img" alt="User profile image">
         <h3 class="search-result-name">{{name}}</h3>
-        {% if aux == 2 %}
+        {% if aux == 1 %}
+        <button type="button" class="btn btn-primary search-result-btn" onclick="follow({{id}})">Follow</button>
+        {% elif aux == 2 %}
         <button type="button" class="btn btn-primary search-result-btn search-result-btn-gray">Following</button>
         {% elif aux == 3 %}
         <button type="button" class="btn btn-primary search-result-btn search-result-btn-gray">Friend</button>

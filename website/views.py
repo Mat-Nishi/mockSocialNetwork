@@ -29,7 +29,29 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @login_required
 def home():
-    return render_template("home.html", user=current_user)
+    with open("website/graph.json", 'r') as file:
+        graph = load(file)
+    
+    with open("website/users.json", 'r') as file:
+        users = load(file)
+    
+    visited = [False for _ in range(len(graph))]
+    root = int(current_user.id)-1
+    results = []
+
+    #bfs from user first, then bfs through disconnected nodes 
+    for cur in graph[root]:
+        if int(cur) not in graph[root]:
+            aux = 1
+        elif users[str(cur)]['company']:
+            aux = 0
+        elif root not in graph[int(cur)]:
+            aux = 2
+        else:
+            aux = 3
+        results.append((cur, users[str(cur)]['firstName'], aux))
+
+    return render_template("home.html", user=current_user, ids=results)
 
 @views.route('/search', methods=['GET', 'POST'])
 @login_required
@@ -71,21 +93,27 @@ def search_result():
         if cur != root:
             if users[str(cur)][searchType] == searchTerm:
                 if int(cur) not in graph[root]:
-                    aux = True
+                    aux = 1
+                elif users[str(cur)]['company']:
+                    aux = 0
+                elif root not in graph[int(cur)]:
+                    aux = 2
                 else:
-                    aux = False
+                    aux = 3
                 results.append((cur, users[str(cur)]['firstName'], aux))
         for node in graph[cur]:
             if not visited[node]:
                 queue.append(node)
                 visited[node] = True
-        for i in range(len(visited)):
-            if not visited[i]:
-                queue.append(i)
-                visited[i] = True
-                break
 
-    print(results)
+        if len(queue) == 0:
+            for i in range(len(visited)):
+                if not visited[i]:
+                    queue.append(i)
+                    visited[i] = True
+                    break
+        if len(queue) == 0:
+            break
 
     return render_template("search_result.html", user=current_user, ids=results)
 

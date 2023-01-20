@@ -63,6 +63,13 @@ height: 100%;
     z-index: -1000;
 }
 
+.home-container{
+    position: absolute;
+    top:80px;
+    width: 300px;
+    z-index: -1000;
+}
+
 .card-search{
     display: flex;
     flex-direction: row;
@@ -94,12 +101,21 @@ height: 100%;
 
 .search-result-btn{
     height: 50%px;
-    width: 80px;
+    width: 90px;
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.search-result-btn-gray{
+    background-color: gray !important;
+    border-color: gray o !important;
 }
 
 .home-plot{
     position: absolute;
     margin: 100px 180px;
+}
+
+.sign-up-box{
+    margin-top: 30px;
 }
